@@ -1,0 +1,121 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #121212;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .container {
+    perspective: 1000px;
+  }
+  
+  .card {
+    width: 300px;
+    padding: 30px;
+    background-color: #282828;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform-style: preserve-3d;
+    transform: rotateX(15deg);
+    transition: transform 0.5s ease;
+    position: relative;
+  }
+  
+  .card:hover {
+    transform: rotateX(0);
+  }
+  
+  h2 {
+    text-align: center;
+    color: #fff;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-container {
+    position: relative;
+  }
+  
+  input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #121212;
+    color: #fff;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .ring {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 8px solid #007BFF;
+    border-top-color: transparent;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+  }
+  
+  .forgot-password {
+    text-align: center;
+    color: #007BFF;
+    text-decoration: none;
+  }
+  
+  .led {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #FF4141;
+    box-shadow: 0 0 10px #FF4141;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(50%, -50%);
+    display: none;
+  }
+  
+  .led.active {
+    background-color: #40C057;
+    box-shadow: 0 0 10px #40C057;
+    animation: blink 1.5s infinite;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+  
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
+  
